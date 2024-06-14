@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      names = [];
+      function add() {
+        data = document.getElementById("name").value;
+        names.push(data);
+        document.getElementById("name").value = "";
+      }
+
+      function display() {
+        main = document.getElementById("names");
+        main.innerHTML = "";
+        for (let i = 0; i < names.length; i++) {
+          main.innerHTML +=
+            "<li>" +
+            names[i] +
+            "</li> <button onclick='remove(" +
+            i +
+            ")'>Remove</button>";
+        }
+      }
+      function remove(index) {
+        names.splice(index, 1);
+        display();
+      }
+      function sortNames() {
+        names.sort();
+        display();
+      }
+      function sortNamesDesc() {
+        names.reverse();
+        display();
+      }
+    </script>
+  </head>
+  <body>
+    Name:
+    <input type="text" name="" id="name" />
+    <br />
+    <button onclick="add(); display()">Add</button>
+    <button onclick="sortNames()" ondblclick="sortNamesDesc()">Sort</button>
+
+    <ul id="names"></ul>
+  </body>
+</html>

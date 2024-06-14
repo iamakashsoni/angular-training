@@ -1,0 +1,11 @@
+<input #item type="text" name="name" [(ngModel)]="newName" /> <br />
+<button (click)="addName(item.value)">Add</button> <br />
+<br />
+<button (click)="sortName()">Sort</button> <br />
+<p>{{ newName }}</p>
+<ul>
+  @for(item of name; track $index){
+  <li>{{ item }} <button (click)="removeName($index)">Remove</button></li>
+
+  }
+</ul>

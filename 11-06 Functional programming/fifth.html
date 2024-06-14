@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      arr = [20, 5, 3, 7, 0, -1, 20];
+
+      console.log(arr.filter((num) => num % 2 == 0));
+
+      console.log(arr.map((num) => num * 2));
+
+      data = [
+        { name: "Akash", age: 24 },
+        { name: "Kalpesh", age: 25 },
+        { name: "xyz", age: 15 },
+      ];
+
+      filteredData = data.filter((item) => item.age >= 18);
+      mappedData = data.map((item) => {
+        item.age = item.age * 2;
+        return item;
+      });
+      function display() {
+        main = document.getElementById("Filtered");
+        main.innerHTML = "";
+        for (let i = 0; i < filteredData.length; i++) {
+          main.innerHTML +=
+            "<tr><td>" +
+            filteredData[i].name +
+            "</td> <td>" +
+            filteredData[i].age +
+            "</td></tr>";
+        }
+
+        main = document.getElementById("Mapped");
+        main.innerHTML = "";
+        for (let i = 0; i < mappedData.length; i++) {
+          main.innerHTML +=
+            "<tr><td>" +
+            mappedData[i].name +
+            "</td> <td>" +
+            mappedData[i].age +
+            "</td></tr>";
+        }
+      }
+    </script>
+  </head>
+  <body onload="display()">
+    <table border="1" width="100%">
+      <caption>
+        Filtered Data (Age Greater than 18)
+      </caption>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody id="Filtered"></tbody>
+    </table>
+    <br /><br />
+
+    <hr />
+    <br /><br />
+    <table border="1" width="100%">
+      <caption>
+        Mapped Data (Double the age)
+      </caption>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody id="Mapped"></tbody>
+    </table>
+  </body>
+</html>

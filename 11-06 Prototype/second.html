@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //   var arr = [1, 2, 3, 4];
+      //   var arr2 = [...arr];
+      //   arr2[0] = "Akash";
+
+      //   console.log(arr);
+      //   console.log(arr2);
+
+      //   obj = { name: "Akash", age: 24 };
+
+      //   var obj2 = { ...obj };
+      //   obj2.name = "hritick";
+
+      //   console.log(obj);
+      //   console.log(obj2);
+
+      arr = [
+        { name: "Akash", age: 24 },
+        { name: "Kalpesh", age: 25 },
+        { name: "xyz", age: 35 },
+      ];
+
+      var arr2 = arr.map((a) => {
+        return { ...a };
+      });
+
+      arr2[1].name = "Akash";
+      arr2[1].age = 80;
+
+      console.log(arr);
+      console.log(arr2);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Binding</title>
+    <script>
+      function demo() {
+        name = "Akash Soni";
+        main = document.getElementById("name");
+        main.innerHTML = name;
+      }
+      function ondblclickdemo() {
+        name = "Akash Soni1";
+        main = document.getElementById("name");
+        main.innerHTML = name;
+      }
+      function onmouseoverdemo() {
+        name = "Akash Soni2";
+        main = document.getElementById("name");
+        main.innerHTML = name;
+      }
+      function onmouseoutdemo() {
+        name = "Akash Soni3";
+        main = document.getElementById("name");
+        main.innerHTML = name;
+      }
+      function onfocusdemo() {
+        name = "Akash Soni4";
+        main = document.getElementById("name");
+        main.innerHTML = name;
+      }
+      function onblurdemo() {
+        name = "Akash Soni5";
+        main = document.getElementById("name");
+        main.innerHTML = name;
+      }
+      function onchangedemo() {
+        name = document.getElementById("text1").value;
+        main = document.getElementById("name");
+        main.innerHTML = name;
+      }
+      function onkeypressdemo() {
+        name = document.getElementById("text2").value;
+        main = document.getElementById("name");
+        main.innerHTML = name;
+      }
+      function onkeyupdemo() {
+        name = document.getElementById("text3").value;
+        main = document.getElementById("name");
+        main.innerHTML = name;
+      }
+    </script>
+  </head>
+  <body>
+    <p id="name">Your Name</p>
+    <button onclick="demo()">onclick</button>
+    <button ondblclick="ondblclickdemo()">ondblclick</button>
+    <button onmouseover="onmouseoverdemo()">onmouseover</button>
+    <button onmouseout="onmouseoutdemo()">onmouseout</button>
+    <button onfocus="onfocusdemo()">onfocus</button>
+    <button onblur="onblurdemo()">onblur</button>
+    <br />
+    onchangedemo:
+    <input type="text" name="" id="text1" onchange="onchangedemo()" />
+    <br />
+    onkeypressdemo:
+    <input type="text" name="" id="text2" onkeypress="onkeypressdemo()" />
+    <br />
+    onkeyupdemo:
+    <input type="text" name="" id="text3" onkeyup="onkeyupdemo()" />
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table id="data" border="1">
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+    </table>
+    <script>
+      names = [
+        { name: "Akash", age: 24 },
+        { name: "Kalpesh", age: 25 },
+        { name: "xyz", age: 35 },
+      ];
+      main = document.getElementById("data");
+      for (let i = 0; i < names.length; i++) {
+        main.innerHTML +=
+          "<tr><td>" + names[i].name +"</td> <td>" + names[i].age + "</td></tr>";
+      }
+      //   let i = 0;
+      //   while(i<names.length){
+      //     main.innerHTML  += "<li>"+names[i]+"</li>";
+      //     i++
+      //   }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      arr = [
+        { name: "Akash", age: 24 },
+        { name: "Kalpesh", age: 25 },
+        { name: "xyz", age: 35 },
+      ];
+
+      alert(
+        JSON.stringify(
+          arr.sort((n1, n2) =>
+            n1.name == n2.name ? 0 : n1.name < n2.name ? 1 : -1
+          )
+        )
+      );
+      alert(
+        JSON.stringify(
+          arr.sort((n1, n2) =>
+            n1.name == n2.name ? 0 : n1.name < n2.name ? -1 : 1
+          )
+        )
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

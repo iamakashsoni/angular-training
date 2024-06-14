@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body class="hero-anime">
+    <!-- onload="nameRequest()" -->
+    <div
+    class="navigation-wrap bg-light start-header start-style"
+    id="navbar-container"
+  ></div>
+    <div class="section full-height">
+        <div class="absolute-center">
+            <div class="section">
+                <div class="container py-5 w">
+                    <h1>Contact Me</h1>
+                    <form class="p-md-5 border rounded-3 bg-body-tertiary">
+                        <div class="form-floating mb-3">
+                            <input type="text" id="form4Example1" class="form-control" />
+                            <label class="form-label" for="form4Example1">Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="email" id="form4Example2" class="form-control" />
+                            <label class="form-label" for="form4Example2">Email address</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" id="form4Example3" rows="8"></textarea>
+                            <label class="form-label" for="form4Example3">Message</label>
+                        </div>
+                        <div class="form-check d-flex justify-content-left mb-3">
+                            <input class="form-check-input me-2" type="checkbox" value="" id="form4Example4" checked />
+                            <label class="form-check-label" for="form4Example4">
+                                Send me a copy of this message
+                              </label>
+                        </div>
+                        <button type="submit" class="w-100 btn btn-lg btn-primary">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./main.js"></script>
+    <script>
+        userData = []
+
+        document.getElementById('userData').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const fName = document.getElementById("fName").value;
+            const lName = document.getElementById("lName").value;
+            const mobile = document.getElementById("mobile").value;
+
+            result = {
+                fName: fName,
+                lName: lName,
+                mobile: mobile
+            }
+            userData.push(result);
+            updateTable();
+        });
+
+        function updateTable() {
+            table = document.getElementById("userDataTable");
+            table.innerHTML = "";
+            for (let i = 0; i < userData.length; i++) {
+                table.innerHTML +=
+                    "<tr><td>" + (i + 1) + "</td><td>" + userData[i].fName + "</td> <td>" + userData[i].lName + "</td><td>" + userData[i].mobile + "</td></tr>";
+            }
+        }
+    </script>
+</body>
+
+</html>

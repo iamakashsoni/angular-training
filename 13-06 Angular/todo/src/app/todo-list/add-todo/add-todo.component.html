@@ -1,0 +1,25 @@
+<div class="add-task">
+  <input
+    type="text"
+    autocomplete="off"
+    placeholder="Add New Task"
+    class="task-input"
+    [(ngModel)]="taskDesc"
+  />
+</div>
+<div class="add-task">
+  <input
+    type="text"
+    autocomplete="off"
+    placeholder="1 - High | 2- Medium | 3 - Low"
+    class="task-input"
+    [(ngModel)]="taskPriority"
+  />
+  <input
+    type="submit"
+    value=""
+    class="submit-task"
+    title="Add Task"
+    (click)="addTask()"
+  />
+</div>

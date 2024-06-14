@@ -1,0 +1,12 @@
+<div class="app-container" id="taskList">
+  <h1 class="app-header">TO DO LIST</h1>
+  <app-add-todo (add)="addToDo($event)"></app-add-todo>
+  <app-filter-task
+    (priorityFilter)="filterByPriority($event)"
+  ></app-filter-task>
+  <ul class="task-list">
+    @for(item of tasks; track item.id){
+    <app-todo [todo]="item" (remove)="removeToDo($event)"></app-todo>
+    }
+  </ul>
+</div>

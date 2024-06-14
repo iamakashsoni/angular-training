@@ -1,0 +1,25 @@
+<div>
+  <div style="display: flex; justify-content: space-between">
+    <div>
+      <label class="font-weight-normal text-light w-100"> Priority</label>
+      <select [(ngModel)]="priority" class="form-select form-select-sm mb-3" (change)="updatePriorityStatus()">
+        @for(priority of priorityFilters; track $index){
+        <option [selected]="priority.priority" [value]="priority.id">
+          {{ priority.priority }}
+        </option>
+        }
+      </select>
+    </div>
+
+    <div>
+      <label class="font-weight-normal text-light">Status</label>
+      <select [(ngModel)]="status" class="form-select form-select-sm mb-3">
+        @for(status of statusFilters; track $index){
+        <option [selected]="status">
+          {{ status }}
+        </option>
+        }
+      </select>
+    </div>
+  </div>
+</div>

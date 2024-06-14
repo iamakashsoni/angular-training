@@ -1,0 +1,568 @@
+<div class="container">
+  @if(!displayPopup){
+  <div class="cv">
+    <div class="add-data">
+      <i class="fa-solid fa-file-circle-plus" (click)="openPopup()"></i>
+    </div>
+    <!-- @if(submitted){
+      
+    } -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8">
+          <!-- header -->
+          <header class="cv-header">
+            <img
+              class="cv-header__img"
+              src="https://selcukcura.com/wp-content/themes/selfolio-2018/img/profile-img/selcuk-cura-young.jpg"
+              data-zoomable
+            />
+            <div class="cv-header__text-container">
+              <h1 class="cv-header__name">
+                {{ formData.name }}
+              </h1>
+              <p class="cv-header__job-title">{{ formData.desgination }}</p>
+            </div>
+          </header>
+
+          <!-- content -->
+          <section class="cv-section">
+            <h2 class="cv-section__title">
+              <i class="fas fa-user fa-fw"></i> Profile
+            </h2>
+            <div class="cv-section__wrapper">
+              <p class="cv-section__description">
+                {{ formData.profile }}
+              </p>
+            </div>
+          </section>
+
+          <!-- experience -->
+          <section class="cv-section">
+            <h2 class="cv-section__title">
+              <i class="fas fa-briefcase fa-fw"></i> Experience
+            </h2>
+            <div class="cv-section__wrapper">
+              <!-- freelance -->
+              <div class="cv-section__experience">
+                <p class="cv-section__role">Freelance – Front-end Developer</p>
+                <p class="cv-section__period">February 2018 – Present</p>
+                <p class="cv-section__description">
+                  Web design and development, logo animation, SEO, content
+                  creation & photography.
+                </p>
+              </div>
+
+              <!-- undertone -->
+              <div class="cv-section__experience">
+                <p class="cv-section__role">
+                  Undertone, Advertising Agency – Creative Developer
+                </p>
+                <p class="cv-section__period">June 2017 – January 2018</p>
+                <p class="cv-section__description">
+                  Development of various high-impact adverts for mobile and
+                  desktop platforms.
+                </p>
+              </div>
+
+              <!-- doner -->
+              <div class="cv-section__experience">
+                <p class="cv-section__role">
+                  Doner, Advertising Agency – Front-end Developer
+                </p>
+                <p class="cv-section__period">June 2015 – June 2017</p>
+                <p class="cv-section__description">
+                  Development of the agency’s global website and other internal
+                  projects, built and maintained banner adverts and microsites
+                  and helped improve workflows within the dev team.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- education -->
+          <section class="cv-section">
+            <h2 class="cv-section__title">
+              <i class="fas fa-graduation-cap fa-fw"></i> Education
+            </h2>
+            <div class="cv-section__wrapper">
+              <!-- ravensbourne -->
+              <div class="cv-section__experience">
+                <p class="cv-section__role">
+                  Ravensbourne University London – Web Media BA
+                </p>
+                <p class="cv-section__period">2012 – 2015</p>
+                <p class="cv-section__description">
+                  First-class honours degree.
+                </p>
+              </div>
+
+              <!-- undertone -->
+              <div class="cv-section__experience">
+                <p class="cv-section__role">
+                  Tower Hamlets College – Art & Design (Interactive Media) BTEC
+                  & Media Studies
+                </p>
+                <p class="cv-section__period">2010 – 2012</p>
+                <p class="cv-section__description">
+                  Distinction, Merit, Merit & C.
+                </p>
+              </div>
+
+              <!-- doner -->
+              <div class="cv-section__experience">
+                <p class="cv-section__role">
+                  Langdon Park School – Graphics, Geography & History
+                </p>
+                <p class="cv-section__period">2005 – 2010</p>
+                <p class="cv-section__description">
+                  13 GCSEs at grades A*-C including English, Maths and Science.
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- sidebar -->
+        <aside class="col-md-4 cv-sidebar">
+          <!-- details -->
+
+          <section class="cv-sidebar-section">
+            <h2 class="cv-sidebar-section__title">Details</h2>
+            <p class="cv-sidebar-section__description">
+              {{ formData.address }} <br />
+              <a [href]="'tel:' + formData.mobileNumber" rel="nofollow">{{
+                formData.mobileNumber
+              }}</a>
+              <br />
+              <a [href]="'mailto:' + formData.email" rel="nofollow">{{
+                formData.email
+              }}</a>
+            </p>
+          </section>
+
+          <!-- skills -->
+          <section class="cv-sidebar-section">
+            <h2 class="cv-sidebar-section__title">Skills</h2>
+            <p class="cv-sidebar-section__description">
+              {{ formData.skills }}
+            </p>
+          </section>
+
+          <!-- tools -->
+          <section class="cv-sidebar-section">
+            <h2 class="cv-sidebar-section__title">Tools</h2>
+            <p class="cv-sidebar-section__description">
+              {{ formData.tools }}
+            </p>
+          </section>
+
+          <!-- interests -->
+          <section class="cv-sidebar-section">
+            <h2 class="cv-sidebar-section__title">Interests</h2>
+            <p class="cv-sidebar-section__description">
+              {{ formData.interests }}
+            </p>
+          </section>
+
+          <!-- languages -->
+          <section class="cv-sidebar-section">
+            <h2 class="cv-sidebar-section__title">Languages</h2>
+            <p class="cv-sidebar-section__description">
+              {{ formData.languages }}
+            </p>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </div>
+  } @if(displayPopup){
+  <div class="modal d-block" id="myModal">
+    <div class="modal-dialog" style="max-width: 700px !important">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title w-100 text-center">Make Your Own Resume</h4>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <!-- adding Bootstrap Form here -->
+
+          <form
+            #userlogin="ngForm"
+            (ngSubmit)="onSubmit()"
+            id="myForm"
+            class="needs-validation"
+            novalidate
+          >
+            <div class="container">
+              <h4>Personal Details</h4>
+              <div>
+                <div class="form-group row mb-3">
+                  <label for="id" class="col-sm-4 col-form-label">Name</label>
+                  <div class="col-sm-8">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      name="Name"
+                      [(ngModel)]="formData.name"
+                      placeholder="Enter your Name"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form-group row mb-3">
+                  <label for="id" class="col-sm-4 col-form-label"
+                    >Desgination</label
+                  >
+                  <div class="col-sm-8">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="desgination"
+                      name="desgination"
+                      [(ngModel)]="formData.desgination"
+                      placeholder="Enter your Desgination"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form-group row mb-3">
+                  <label for="id" class="col-sm-4 col-form-label"
+                    >Mobile Number</label
+                  >
+                  <div class="col-sm-8">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="mobileNumber"
+                      name="mobileNumber"
+                      [(ngModel)]="formData.mobileNumber"
+                      placeholder="Enter your Mobile Number"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form-group row mb-3">
+                  <label for="id" class="col-sm-4 col-form-label">Email</label>
+                  <div class="col-sm-8">
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      name="email"
+                      [(ngModel)]="formData.email"
+                      placeholder="Enter your Email"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form-group row mb-3">
+                  <label for="id" class="col-sm-4 col-form-label"
+                    >Address</label
+                  >
+                  <div class="col-sm-8">
+                    <textarea
+                      class="form-control"
+                      id="address"
+                      name="address"
+                      [(ngModel)]="formData.address"
+                      placeholder="Enter your address"
+                      rows="2"
+                      required
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="form-group row mb-3">
+                  <label for="id" class="col-sm-4 col-form-label"
+                    >Profile</label
+                  >
+                  <div class="col-sm-8">
+                    <textarea
+                      class="form-control"
+                      id="profile"
+                      name="profile"
+                      [(ngModel)]="formData.profile"
+                      placeholder="Enter about yourself, minimum 100 words"
+                      rows="3"
+                      required
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+              <hr />
+              <h4>Experience</h4>
+              <div>
+                <div class="form-group row mb-3">
+                  <label for="id" class="col-sm-4 col-form-label"
+                    >Company Name</label
+                  >
+                  <div class="col-sm-8">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="companyname"
+                      name="companyname"
+                      [(ngModel)]="formData.experience.companyName"
+                      placeholder="Enter Company Name"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                  <label for="id" class="col-sm-4 col-form-label"
+                    >Designation</label
+                  >
+                  <div class="col-sm-8">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="desgination"
+                      name="desgination"
+                      [(ngModel)]="formData.experience.desgination"
+                      placeholder="Enter Designation"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                  <label for="id" class="col-sm-4 col-form-label">From</label>
+                  <div class="col-sm-8">
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="from"
+                      name="from"
+                      [(ngModel)]="formData.experience.from"
+                      placeholder="Enter From Date"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                  <label for="id" class="col-sm-4 col-form-label">To</label>
+                  <div class="col-sm-8">
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="to"
+                      name="to"
+                      [(ngModel)]="formData.experience.to"
+                      placeholder="Enter To Date"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                  <label for="id" class="col-sm-4 col-form-label"
+                    >Description</label
+                  >
+                  <div class="col-sm-8">
+                    <textarea
+                      class="form-control"
+                      id="description"
+                      name="description"
+                      [(ngModel)]="formData.experience.description"
+                      placeholder="Enter Description"
+                      required
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+              <hr />
+              <h4>Education Details</h4>
+              <div>
+                <div class="form-group row mb-3">
+                  <label for="id" class="col-sm-4 col-form-label"
+                    >Institute Name</label
+                  >
+                  <div class="col-sm-8">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="instituteName"
+                      name="instituteName"
+                      [(ngModel)]="formData.education.instituteName"
+                      placeholder="Enter Company Name"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                  <label for="id" class="col-sm-4 col-form-label">Course</label>
+                  <div class="col-sm-8">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="desgination"
+                      name="desgination"
+                      [(ngModel)]="formData.education.course"
+                      placeholder="Enter Designation"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                  <label for="id" class="col-sm-4 col-form-label">From</label>
+                  <div class="col-sm-8">
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="from"
+                      name="from"
+                      [(ngModel)]="formData.education.from"
+                      placeholder="Enter From Date"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                  <label for="id" class="col-sm-4 col-form-label">To</label>
+                  <div class="col-sm-8">
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="to"
+                      name="to"
+                      [(ngModel)]="formData.education.to"
+                      placeholder="Enter To Date"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                  <label for="id" class="col-sm-4 col-form-label"
+                    >Description</label
+                  >
+                  <div class="col-sm-8">
+                    <textarea
+                      class="form-control"
+                      id="description"
+                      name="description"
+                      [(ngModel)]="formData.education.description"
+                      placeholder="Enter Description"
+                      required
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+              <hr />
+              <h4>Other Details</h4>
+              <div>
+                <div class="form-group row mb-3">
+                  <label for="id" class="col-sm-4 col-form-label">Skills</label>
+                  <div class="col-sm-8">
+                    @for(skill of skillsList; track skill.id){
+                    <input
+                      type="checkbox"
+                      id="skill_{{ skill.id }}"
+                      name="skill"
+                      [(ngModel)]="skill.selected"
+                      (ngModelChange)="updateSkills()"
+                    />
+                    <label [for]="'skill_' + skill.id
+                    
+                    
+                    " class="px-2">{{ skill.name }}</label>
+                    <br />
+                    }
+                  </div>
+                </div>
+                <div class="form-group row mb-3">
+                  <label for="id" class="col-sm-4 col-form-label">Tools</label>
+                  <div class="col-sm-8">
+                    @for(tool of toolsList; track tool.id){
+                    <input
+                      type="checkbox"
+                      id="tool_{{ tool.id }}"
+                      name="tool"
+                      [(ngModel)]="tool.selected"
+                      (ngModelChange)="updateTools()"
+                    />
+                    <label [for]="'tool_' + tool.id" class="px-2">{{ tool.name }}</label>
+                    <br />
+                    }
+                  </div>
+                </div>
+                <div class="form-group row mb-3">
+                  <label for="id" class="col-sm-4 col-form-label">Tools</label>
+                  <div class="col-sm-8">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="tools"
+                      name="tools"
+                      [(ngModel)]="formData.tools"
+                      placeholder="Enter your tools (for multiple use ,)"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form-group row mb-3">
+                  <label for="id" class="col-sm-4 col-form-label"
+                    >Interests</label
+                  >
+                  <div class="col-sm-8">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="interests"
+                      name="interests"
+                      [(ngModel)]="formData.interests"
+                      placeholder="Enter your interests (for multiple use ,)"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form-group row mb-3">
+                  <label for="id" class="col-sm-4 col-form-label"
+                    >Languages</label
+                  >
+                  <div class="col-sm-8">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="languages"
+                      name="languages"
+                      [(ngModel)]="formData.languages"
+                      placeholder="Enter your languages (for multiple use ,)"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                <button class="btn btn-success" type="submit">Submit</button>
+              </div>
+            </div>
+          </form>
+
+          <script></script>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-danger"
+            data-dismiss="modal"
+            (click)="closePopup()"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  }
+</div>

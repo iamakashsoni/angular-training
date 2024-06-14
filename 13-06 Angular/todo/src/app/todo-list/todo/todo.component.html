@@ -1,0 +1,11 @@
+<li class="task-list-item">
+  <label class="task-list-item-label">
+    <input type="checkbox" />
+    <span>{{ todo.priority }} - {{ todo.desc }}</span>
+  </label>
+  <span
+    class="delete-btn"
+    title="Delete Task"
+    (click)="removeToDo(todo.id)"
+  ></span>
+</li>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function ascSorter(n1, n2) {
+        return n1 == n2 ? 0 : n1 < n2 ? -1 : 1;
+      }
+      function descSorter(n1, n2) {
+        return n1 == n2 ? 0 : n1 < n2 ? 1 : -1;
+      }
+
+      arr = [20,5,3,7,0,-1, 20]
+
+      console.log(arr.sort(ascSorter));
+      console.log(arr.sort(descSorter));
+    </script>
+  </head>
+  <body></body>
+</html>
