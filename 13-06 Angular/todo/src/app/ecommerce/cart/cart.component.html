@@ -1,0 +1,13 @@
+<div class="container">
+    <h2>Shopping Cart</h2>
+    <div class="list-group">
+        @for(item of cartItems; track item.id) {
+        <div class="list-group-item">
+            <img [src]="item.imageUrl" class="img-thumbnail" alt="{{ item.name }}" width="50"> {{ item.name }} - ${{ item.price }} ({{ item.discount }}% off)
+        </div>
+        }
+    </div>
+    @if(cartItems.length === 0){
+    <p>Cart is empty</p>
+    }
+</div>
