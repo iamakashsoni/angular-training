@@ -1,0 +1,18 @@
+features: features like get, add, remove, update in different components and have service of each features.
+
+store manager: managing all state of services at single place, with help of ngRx
+
+action: store ko jo request dispatch krte h like add new movie to Moviews, 
+delete shoe from Product (type:add, remove, show data, update data and so on), 
+payload: action ke sath jo request data jata h, jisme kya krna h wo define hota h (like product of id)
+(payload optional hota h for get request type)
+
+action ko component dispatch krta h store ko with type and payload then store, selector ke store ke reducer ke pass jata h 
+
+store reducer(every selector has one reducer)->(manages state inside the store): collection of Action Listener
+on(actionName, ()=>{
+ state change krte h depending on action type
+})
+
+selector (features/slice): store have unique selector for each features, 
+which is intend to work in state management of each features

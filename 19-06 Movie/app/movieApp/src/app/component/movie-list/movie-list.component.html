@@ -1,0 +1,41 @@
+<input
+  type="text"
+  [(ngModel)]="searchTerm"
+  placeholder="Search by title or genre"
+/>
+
+@for(item of movies; track item.id){
+<div class="movie_card" id="ave">
+  <div class="info_section">
+    <div class="movie_header">
+      <img class="locandina" [src]="item.poster" />
+      <h4>{{ item.title }}</h4>
+      <h6>{{ item.year }}, {{ item.actors }}</h6>
+      <span class="minutes"
+        >{{ item.rating }}
+        <i class="fa-solid fa-star" style="color: #ffd43b"></i
+      ></span>
+      <p class="type">{{ item.genre }}</p>
+    </div>
+    <div class="movie_desc">
+      <p class="text">
+        {{ item.plot }} <br />
+        <label for="director">Director: </label> {{ item.director }} <br />
+        <label for="language">Language: </label> {{ item.language }} <br />
+        <label for="boxOffice">Box Office: </label> {{ item.boxOffice }}
+      </p>
+    </div>
+    <div class="movie_social">
+      <ul>
+        <li><i class="fa-solid fa-share-nodes" style="color: #ffffff"></i></li>
+        <li><i class="fa-solid fa-comment" style="color: #ffffff"></i></li>
+      </ul>
+    </div>
+  </div>
+  <div
+    class="blur_back ave_back"
+    style="background-image: url({{item.poster}});"
+  ></div>
+</div>
+
+}

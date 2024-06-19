@@ -21,7 +21,7 @@ export class WriterComponent implements OnInit {
   addMission() {
     let data = { id: this.id, name: this.name };
     this.service.addMission(data).subscribe(() => {
-      console.log('Added'); 
+      console.log('Added');
     });
   }
 }

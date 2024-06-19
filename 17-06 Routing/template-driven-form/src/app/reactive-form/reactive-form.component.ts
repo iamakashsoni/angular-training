@@ -36,7 +36,9 @@ export class ReactiveFormComponent {
       else
       return {'error':"Number not allowed as name"};
   }
+  
   onSubmit(form: FormGroup) {
+    console.log(form)
     console.log('Valid?', form.valid); // true or false
     console.log('Name', form.value.name);
     console.log('Email', form.value.email);

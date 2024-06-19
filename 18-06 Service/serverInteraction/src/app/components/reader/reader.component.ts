@@ -15,9 +15,12 @@ export class ReaderComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('reader oninit called');
-    this.getMissions();
+    this.getProductsMission();
+    this.service.dataUpdatedObservable.subscribe(() => {
+      this.getProductsMission();
+    });
   }
-  getMissions(): any {
+  getProductsMission(): any {
     this.service.getMissions().subscribe((data: any) => {
       this.products = data;
     });
@@ -25,7 +28,7 @@ export class ReaderComponent implements OnInit {
   removeMission(id: number): void {
     this.service.removeMission(id).subscribe(() => {
       console.log('delete');
-      this.getMissions();
+      this.getProductsMission();
     });
   }
 }
