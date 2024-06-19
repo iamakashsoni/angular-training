@@ -16,3 +16,5 @@ on(actionName, ()=>{
 
 selector (features/slice): store have unique selector for each features, 
 which is intend to work in state management of each features
+
+effects call http client,dispatch, dispatch success, dispatch failed
