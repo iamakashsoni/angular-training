@@ -1,0 +1,21 @@
+<table border="1" width="100%" style="text-align: center">
+  <thead>
+    <tr>
+      <th>Product Name</th>
+      <th>Price</th>
+      <th>Brand</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  @for(item of product; track item.id){
+  <tbody>
+    <tr>
+      <td>{{ item.name }}</td>
+      <td>{{ item.price }}</td>
+      <td>{{ item.brand }}</td>
+      <td><button (click)="removeProduct(item.id)">Remove</button></td>
+    </tr>
+  </tbody>
+  }
+</table>

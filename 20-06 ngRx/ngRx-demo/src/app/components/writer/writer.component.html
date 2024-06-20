@@ -1,0 +1,13 @@
+<h1>-----Enter Product Details-----</h1>
+<label for="id">ID: </label>
+<input type="number" name="id" [(ngModel)]="data.id" /> <br />
+<label for="name">Product Name: </label>
+<input type="text" name="name" [(ngModel)]="data.name" /> <br />
+<label for="price">Price: </label>
+<input type="number" name="price" [(ngModel)]="data.price" /><br />
+<label for="brand">Brand: </label>
+<input type="text" name="brand" [(ngModel)]="data.brand" /><br />
+<br />
+<button type="submit" (click)="addProduct()">Add</button> <br />
+<br />
+<button type="submit" (click)="clearProduct()">Clear</button> <br />

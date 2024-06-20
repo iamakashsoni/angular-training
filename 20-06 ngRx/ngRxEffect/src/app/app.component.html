@@ -1,0 +1,11 @@
+<h1>-----Enter Person Details-----</h1>
+<label for="id">ID: </label>
+<input type="number" name="id" [(ngModel)]="requestData.id" /> <br />
+<label for="name">First Name: </label>
+<input type="text" name="fname" [(ngModel)]="requestData.fname" /> <br />
+<label for="name">Last Name: </label>
+<input type="text" name="lname" [(ngModel)]="requestData.lname" /> <br />
+<br />
+<button type="submit" (click)="addProduct()">Add</button> <br />
+
+<p>{{data | json}}</p>
