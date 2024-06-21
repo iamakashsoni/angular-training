@@ -1,0 +1,6 @@
+Directives:
+
+3types: 
+Attribute [] 
+Structural @
+Component - template

@@ -1,0 +1,40 @@
+Unit Testing is testing of service or component, and verifying that the actual output is matched with expected output.
+
+mocking - creating dummy content, instead of api call
+
+JEST / jasmine - test cases likhne wali API
+
+
+Karma is an open-source test runner for JavaScript,  serves as a test runner, offering a testing environment
+
+
+mocha is amitabh bachhan
+
+test suite ke ander test cases likhte h 
+
+
+testcases likhne wale function ka naam hota h "it()"
+
+describe("App component test suite", ()=>{
+beforeEach(()=>{
+    //this code will run before each code
+})
+it("expected output description 1", ()=>{
+    //test case 1
+    //mocking; spying
+
+    expect().tobeEqual(actual output, expected output)
+})
+
+it("expected output description 2", ()=>{
+    //test case 2
+})
+})
+
+
+
+
+to run test:
+ng test
+or
+npm run test

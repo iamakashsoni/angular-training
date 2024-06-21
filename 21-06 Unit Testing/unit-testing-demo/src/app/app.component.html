@@ -1,0 +1,12 @@
+<ul class="list-group">
+  @for(item of products; track item.id){
+  <li class="list-group-item">
+    {{ item.id }} - {{ item.name }}
+    <button class="btn btn-danger" (click)="removeMission(item.id)">
+      Remove
+    </button>
+  </li>
+  }
+</ul>
+
+<h1 appMyDirectives>My Custom Directives</h1>
